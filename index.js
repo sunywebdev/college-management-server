@@ -138,7 +138,7 @@ async function run() {
 		});
 
 		//To load single students by roll
-		app.get("/students/:roll", async (req, res) => {
+		app.get("/students", async (req, res) => {
 			const roll = req.params.id;
 			const filter = { id: roll };
 			console.log("Request to find ", filter);
