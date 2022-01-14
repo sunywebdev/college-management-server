@@ -137,12 +137,12 @@ async function run() {
 			console.log("Found all notices", notices);
 		});
 
-		//To load single students by id
-		app.get("/students/:id", async (req, res) => {
-			const id = req.params.id;
-			console.log("Request to find ", id);
-			const findId = { _id: ObjectId(id) };
-			const result = await projectsCollection.findOne(findId);
+		//To load single students by roll
+		app.get("/students/:roll", async (req, res) => {
+			const roll = req.params.id;
+			const filter = { id: roll };
+			console.log("Request to find ", filter);
+			const result = await studentsCollection.findOne(filter);
 			res.send(result);
 			console.log("Found one", result);
 		});
@@ -156,7 +156,7 @@ async function run() {
 			const id = req.params.id;
 			console.log("Request to delete ", id);
 			const deleteId = { _id: ObjectId(id) };
-			const result = await usersCollection.deleteOne(deleteId);
+			const result = await studentsCollection.deleteOne(deleteId);
 			res.send(result);
 			console.log("user Successfully Deleted", result);
 		});
