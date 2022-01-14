@@ -22,8 +22,8 @@ async function run() {
 		await client.connect();
 
 		//DB Folder and Subfolder
-		const database = client.db("collegeManagement");
-		const studentsCollection = database.collection("students");
+		const database = client.db("smartAttendence");
+		const studentsCollection = database.collection("student");
 		const teachersCollection = database.collection("teachers");
 		const noticesCollection = database.collection("notices");
 
