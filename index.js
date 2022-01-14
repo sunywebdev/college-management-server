@@ -30,7 +30,6 @@ async function run() {
 		/* ------
         ------ login , role, add user
         ------ */
-
 		//To add new user when login or signup
 		app.post("/users", async (req, res) => {
 			const newuser = req.body;
